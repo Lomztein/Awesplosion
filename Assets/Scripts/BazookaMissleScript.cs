@@ -17,11 +17,15 @@ public class BazookaMissleScript : MonoBehaviour {
 		Destroy (gameObject);
 		Collider[] colliders = Physics.OverlapSphere(transform.position,radius);
 		foreach (Collider hit in colliders) {
+
 			if (hit && hit.rigidbody) {
 				hit.rigidbody.AddExplosionForce(power,transform.position,radius,3f);
 			}
 			if (hit && hit.GetComponent<healthScript>()) {
-				hit.GetComponent<healthScript>().health -= 50;
+				float distance = Vector3.Distance (transform.position,hit.transform.position);
+				float distanceFactor = distance/radius;
+				Debug.Log (distanceFactor);
+				hit.GetComponent<healthScript>().health -= (power/20) * distanceFactor;
 			}
 		}
 	}

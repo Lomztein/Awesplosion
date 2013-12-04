@@ -8,9 +8,17 @@ public class healthScript : MonoBehaviour {
 	public float regenSpeed;
 	public float regenLimit;
 	public bool invinsible;
+	public bool drawHealth;
+	public Vector2 healthPos;
 	public GameObject debris;
 	
 	// Update is called once per frame
+	void OnGUI () {
+		if (drawHealth) {
+			GUI.Box (new Rect(healthPos.x,healthPos.y,(Screen.width/2) * (health/maxHealth),20),"Health");
+		}
+	}
+
 	void Update () {
 		if (health >= maxHealth) {
 			health = maxHealth;

@@ -46,15 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BazookaMissleScript.cs" />
-     <Compile Include="Assets\BazookaScript.cs" />
-     <Compile Include="Assets\CameraScript.cs" />
-     <Compile Include="Assets\DebrisScript.cs" />
-     <Compile Include="Assets\ParticleScript.cs" />
-     <Compile Include="Assets\PlayerScript.cs" />
-     <Compile Include="Assets\RemoveAfterTimeScript.cs" />
-     <Compile Include="Assets\RemoveOutsideCamScript.cs" />
-     <Compile Include="Assets\healthScript.cs" />
+     <Compile Include="Assets\Scripts\BazookaMissleScript.cs" />
+     <Compile Include="Assets\Scripts\BazookaScript.cs" />
+     <Compile Include="Assets\Scripts\CameraScript.cs" />
+     <Compile Include="Assets\Scripts\DebrisScript.cs" />
+     <Compile Include="Assets\Scripts\ParticleScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\RemoveAfterTimeScript.cs" />
+     <Compile Include="Assets\Scripts\RemoveOutsideCamScript.cs" />
+     <Compile Include="Assets\Scripts\healthScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
