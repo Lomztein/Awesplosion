@@ -3,15 +3,15 @@ using System.Collections;
 
 public class ParticleScript : MonoBehaviour {
 
-	public GameObject light;
+	public GameObject missleLight;
 
 	// Use this for initialization
 	void Start () {
 		Destroy(gameObject,1);
 	}
 	void Update() {
-		if (light) {
-			light.light.intensity -= 3 * Time.deltaTime;
+		if (missleLight) {
+			missleLight.light.intensity -= 3 * Time.deltaTime;
 		}
 	}
 }

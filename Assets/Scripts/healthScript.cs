@@ -11,6 +11,7 @@ public class healthScript : MonoBehaviour {
 	public bool drawHealth;
 	public Vector2 healthPos;
 	public GameObject debris;
+	public Vector3 debrisVelocity;
 	
 	// Update is called once per frame
 	void OnGUI () {
@@ -29,8 +30,9 @@ public class healthScript : MonoBehaviour {
 		if (health <= 0 && invinsible == false) {
 			Destroy(gameObject);
 			if (debris) {
-				GameObject scatter = (GameObject)Instantiate(debris,transform.position,transform.rotation);
-				scatter.rigidbody.AddForce(rigidbody.velocity);
+				GameObject scatter = (GameObject)Instantiate(debris,gameObject.transform.position,gameObject.transform.rotation);
+				scatter.GetComponent<DebrisScript>().debrisVelocity = rigidbody.velocity;
+//				Debug.Log(rigidbody.velocity);
 			}
 		}
 	}

@@ -51,6 +51,10 @@ public class PlayerScript : MonoBehaviour {
 			targetSpeed = 0;
 		}
 
+		rigidbody.velocity -= new Vector3(rigidbody.velocity.x,0,0);
+		
+		Debug.Log (speed);
+
 //		Debug.Log(targetSpeed);
 
 		Vector3 movement = new Vector3(speed * Time.deltaTime,0,0);

@@ -50,10 +50,14 @@
      <Compile Include="Assets\Scripts\BazookaScript.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\DebrisScript.cs" />
+     <Compile Include="Assets\Scripts\GenericBulletScript.cs" />
+     <Compile Include="Assets\Scripts\HealthPickupScript.cs" />
+     <Compile Include="Assets\Scripts\InfomationShowingScript.cs" />
      <Compile Include="Assets\Scripts\ParticleScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\RemoveAfterTimeScript.cs" />
      <Compile Include="Assets\Scripts\RemoveOutsideCamScript.cs" />
+     <Compile Include="Assets\Scripts\SentryScript.cs" />
      <Compile Include="Assets\Scripts\healthScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

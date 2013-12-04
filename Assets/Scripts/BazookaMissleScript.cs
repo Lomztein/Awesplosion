@@ -22,10 +22,10 @@ public class BazookaMissleScript : MonoBehaviour {
 				hit.rigidbody.AddExplosionForce(power,transform.position,radius,3f);
 			}
 			if (hit && hit.GetComponent<healthScript>()) {
-				float distance = Vector3.Distance (transform.position,hit.transform.position);
+				float distance = Vector2.Distance (transform.position,hit.transform.position);
 				float distanceFactor = distance/radius;
-				Debug.Log (distanceFactor);
-				hit.GetComponent<healthScript>().health -= (power/20) * distanceFactor;
+//				Debug.Log (distanceFactor);
+				hit.GetComponent<healthScript>().health -= (power/20);// * distanceFactor;
 			}
 		}
 	}
