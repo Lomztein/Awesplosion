@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\DebrisScript.cs" />
      <Compile Include="Assets\Scripts\GenericBulletScript.cs" />
+     <Compile Include="Assets\Scripts\GranadeScript.cs" />
      <Compile Include="Assets\Scripts\HealthPickupScript.cs" />
      <Compile Include="Assets\Scripts\InfomationShowingScript.cs" />
      <Compile Include="Assets\Scripts\ParticleScript.cs" />

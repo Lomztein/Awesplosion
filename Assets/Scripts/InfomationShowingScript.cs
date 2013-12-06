@@ -21,9 +21,11 @@ public class InfomationShowingScript : MonoBehaviour {
 	}
 
 	void OnGUI () {
-		Vector3 colScreenPos = Camera.main.WorldToScreenPoint(col.transform.position);
-		if (showText) {
-			GUI.Label(new Rect(Input.mousePosition.x - 50,-Input.mousePosition.y + Screen.height - 20,Screen.width,20),text);
+		if (col != null) {
+			Vector3 colScreenPos = Camera.main.WorldToScreenPoint(col.transform.position);
+			if (showText) {
+				GUI.Label(new Rect(Input.mousePosition.x - 50,-Input.mousePosition.y + Screen.height - 20,Screen.width,20),text);
+			}
 		}
 	}
 }

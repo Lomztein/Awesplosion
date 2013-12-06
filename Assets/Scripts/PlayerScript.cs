@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour {
 	public Texture temp;
 	private float speed;
 	private float targetSpeed;
+	public Texture crosshairTexture;
 
 	//Player handling
 
@@ -25,6 +26,7 @@ public class PlayerScript : MonoBehaviour {
 			Application.LoadLevel ("as_testlevel_01");
 
 		GUI.Label (new Rect(10,10,Screen.width,20),"Control with A and D, Jump with SPACE, shoot with MOUSE_1, Zoom with mouse wheel");
+		GUI.DrawTexture (new Rect(Input.mousePosition.x-10,(-Input.mousePosition.y-10) + Screen.height,20,20),crosshairTexture);
 	}
 
 	// Update is called once per frame
@@ -38,26 +40,28 @@ public class PlayerScript : MonoBehaviour {
 			rigidbody.AddForce(transform.up * jumpSpeed);
 		}
 
-//		Debug.DrawRay(transform.position,(transform.up * -1f),Color.green,1);
-
-		if (Input.GetAxis ("Horizontal") != 0) {
-			targetSpeed = Input.GetAxis ("Horizontal") * maxSpeed;
-			speed += targetSpeed * acceleration * Time.deltaTime;
-			if (Mathf.Abs (speed) > maxSpeed) {
-				speed -= targetSpeed * acceleration * Time.deltaTime;
+//		This movement shit needs a complete rewrite. Perhaps a character controller can be used instead of rigidbody?
+		if (Physics.Raycast (transform.position - new Vector3(0f,-0.25f,0f),(transform.up * -1f),0.5f)) {
+			if (Input.GetAxis ("Horizontal") != 0) {
+				targetSpeed = Input.GetAxis ("Horizontal") * maxSpeed;
+				speed += targetSpeed * acceleration * Time.deltaTime;
+				if (Mathf.Abs (speed) > maxSpeed) {
+					speed -= targetSpeed * acceleration * Time.deltaTime;
+				}
+			}else{
+				speed = speed * acceleration * Time.deltaTime;
+				targetSpeed = 0;
 			}
 		}else{
 			speed = speed * acceleration * Time.deltaTime;
 			targetSpeed = 0;
 		}
-
-		rigidbody.velocity -= new Vector3(rigidbody.velocity.x,0,0);
 		
-		Debug.Log (speed);
+		Debug.Log (rigidbody.velocity);
 
 //		Debug.Log(targetSpeed);
 
 		Vector3 movement = new Vector3(speed * Time.deltaTime,0,0);
-		rigidbody.MovePosition(transform.position + movement);
+		rigidbody.velocity += movement * 5;
 	}
 }

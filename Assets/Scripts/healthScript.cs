@@ -9,6 +9,7 @@ public class healthScript : MonoBehaviour {
 	public float regenLimit;
 	public bool invinsible;
 	public bool drawHealth;
+	public bool freeChildrenOnDeath;
 	public Vector2 healthPos;
 	public GameObject debris;
 	public Vector3 debrisVelocity;
@@ -28,11 +29,14 @@ public class healthScript : MonoBehaviour {
 			health += regenSpeed * Time.deltaTime;
 		}
 		if (health <= 0 && invinsible == false) {
-			Destroy(gameObject);
-			if (debris) {
-				GameObject scatter = (GameObject)Instantiate(debris,gameObject.transform.position,gameObject.transform.rotation);
-				scatter.GetComponent<DebrisScript>().debrisVelocity = rigidbody.velocity;
-//				Debug.Log(rigidbody.velocity);
+			if (freeChildrenOnDeath == false) {
+				Destroy(gameObject);
+				if (debris) {
+					GameObject scatter = (GameObject)Instantiate(debris,gameObject.transform.position,gameObject.transform.rotation);
+					scatter.GetComponent<DebrisScript>().debrisVelocity = rigidbody.velocity;
+				}
+			}else{
+				transform.DetachChildren();
 			}
 		}
 	}
