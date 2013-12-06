@@ -3,28 +3,28 @@ using System.Collections;
 
 public class InfomationShowingScript : MonoBehaviour {
 
-	public string text = "Test";
-	bool showText = true;
-	public Collider col = null;
+	public string text;
+	private bool showText;
+	public Collider other = null;
 
 	// Use this for initialization
-	void OnTriggerEnter (Collider col) {
-		if (col.tag == "Player") {
+	void OnTriggerEnter (Collider other) {
+		if (other.tag == "Player") {
 			showText = true;
 		}
 	}
 
-	void OnTriggerExit (Collider col) {
-		if (col.tag == "Player") {
+	void OnTriggerExit (Collider other) {
+		if (other.tag == "Player") {
 			showText = false;
 		}
 	}
 
 	void OnGUI () {
-		if (col != null) {
-			Vector3 colScreenPos = Camera.main.WorldToScreenPoint(col.transform.position);
+		if (other != null) {
+			Vector3 colScreenPos = Camera.main.WorldToScreenPoint(other.gameObject.transform.position);
 			if (showText) {
-				GUI.Label(new Rect(Input.mousePosition.x - 50,-Input.mousePosition.y + Screen.height - 20,Screen.width,20),text);
+				GUI.Label(new Rect(colScreenPos.x - 50,-colScreenPos.y + Screen.height - 20,Screen.width,20),text);
 			}
 		}
 	}

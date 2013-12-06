@@ -28,6 +28,10 @@ public class healthScript : MonoBehaviour {
 		if (health < regenLimit) {
 			health += regenSpeed * Time.deltaTime;
 		}
+		if (invinsible == true) {
+			health = maxHealth;
+		}
+
 		if (health <= 0 && invinsible == false) {
 			if (freeChildrenOnDeath == false) {
 				Destroy(gameObject);

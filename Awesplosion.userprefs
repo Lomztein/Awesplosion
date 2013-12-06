@@ -1,19 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GranadeScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\JumpPlatformScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\SentryScript.cs" Line="34" Column="1" />
-      <File FileName="Assets\Scripts\BazookaMissleScript.cs" Line="16" Column="1" />
-      <File FileName="Assets\Scripts\PlayerScript.cs" Line="29" Column="97" />
-      <File FileName="Assets\Scripts\healthScript.cs" Line="24" Column="18" />
-      <File FileName="Assets\Scripts\DebrisScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ParticleScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HealthPickupScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BazookaScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GenericBulletScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\InfomationShowingScript.cs" Line="31" Column="2" />
+      <File FileName="Assets\Scripts\TriggerScript.cs" Line="9" Column="40" />
+      <File FileName="Assets\Scripts\PlayerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\InfomationShowingScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CameraScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GranadeScript.cs" Line="7" Column="19" />
+      <File FileName="Assets\Scripts\GranadeScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ActivateableObjectScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DoorScript.cs" Line="14" Column="41" />
+      <File FileName="Assets\Scripts\GenericBulletScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\JumpPlatformScript.cs" Line="6" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

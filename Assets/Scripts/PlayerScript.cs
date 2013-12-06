@@ -11,7 +11,6 @@ public class PlayerScript : MonoBehaviour {
 	public float jumpSpeed;
 	public Texture temp;
 	private float speed;
-	private float targetSpeed;
 	public Texture crosshairTexture;
 
 	//Player handling
@@ -35,31 +34,22 @@ public class PlayerScript : MonoBehaviour {
 		angleToMouse = Mathf.Atan2(mousePos.y-transform.position.y, mousePos.x-transform.position.x)*180 / Mathf.PI;
 		//I did not come up with that myself, found it on the interwebs. Will find out how it works later.
 
-		if (Input.GetButtonDown ("Jump") && Physics.Raycast (transform.position - new Vector3(0f,-0.25f,0f),(transform.up * -1f),0.5f)) {
-			Debug.Log ("You can jump! :D");
-			rigidbody.AddForce(transform.up * jumpSpeed);
-		}
-
-//		This movement shit needs a complete rewrite. Perhaps a character controller can be used instead of rigidbody?
-		if (Physics.Raycast (transform.position - new Vector3(0f,-0.25f,0f),(transform.up * -1f),0.5f)) {
-			if (Input.GetAxis ("Horizontal") != 0) {
-				targetSpeed = Input.GetAxis ("Horizontal") * maxSpeed;
-				speed += targetSpeed * acceleration * Time.deltaTime;
-				if (Mathf.Abs (speed) > maxSpeed) {
-					speed -= targetSpeed * acceleration * Time.deltaTime;
-				}
-			}else{
-				speed = speed * acceleration * Time.deltaTime;
-				targetSpeed = 0;
+		if (Physics.Raycast (transform.position - new Vector3(0f,-0.25f,0f),(transform.up * -1f),0.5f) || Physics.Raycast (transform.position - new Vector3(0.5f,-0.25f,0f),(transform.up * -1f),0.5f) || Physics.Raycast (transform.position - new Vector3(-0.5f,-0.25f,0f),(transform.up * -1f),0.5f)) {
+			if (Input.GetButton ("Jump")) {
+				rigidbody.AddForce(transform.up * jumpSpeed);
 			}
+			speed = Input.GetAxis("Horizontal") * maxSpeed;
 		}else{
-			speed = speed * acceleration * Time.deltaTime;
-			targetSpeed = 0;
+			speed = Input.GetAxis("Horizontal") * maxSpeed/3;
 		}
-		
-		Debug.Log (rigidbody.velocity);
 
-//		Debug.Log(targetSpeed);
+		Debug.DrawRay (transform.position - new Vector3(0f,-0.25f,0f),(transform.up * -1f),Color.green);
+		Debug.DrawRay (transform.position - new Vector3(0.5f,-0.25f,0f),(transform.up * -1f),Color.green);
+		Debug.DrawRay (transform.position - new Vector3(-0.5f,-0.25f,0f),(transform.up * -1f),Color.green);
+
+		Debug.Log (speed);
+
+		Mathf.Clamp(rigidbody.velocity.x,-maxSpeed,maxSpeed);
 
 		Vector3 movement = new Vector3(speed * Time.deltaTime,0,0);
 		rigidbody.velocity += movement * 5;

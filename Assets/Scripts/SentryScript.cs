@@ -26,6 +26,7 @@ public class SentryScript : MonoBehaviour {
 			transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 			if (reloaded == true) {
 				GameObject lastBullet = (GameObject)Instantiate(bulletType,muzzle.transform.position,muzzle.transform.rotation);
+				Instantiate(fireParticle,muzzle.transform.position,muzzle.transform.rotation);
 				lastBullet.rigidbody.AddForce(lastBullet.transform.forward * bulletSpeed);
 				Physics.IgnoreCollision(lastBullet.transform.collider,transform.collider);
 				reloaded = false;
