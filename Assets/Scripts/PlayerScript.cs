@@ -35,7 +35,7 @@ public class PlayerScript : MonoBehaviour {
 		//I did not come up with that myself, found it on the interwebs. Will find out how it works later.
 
 		if (Physics.Raycast (transform.position - new Vector3(0f,-0.25f,0f),(transform.up * -1f),0.5f) || Physics.Raycast (transform.position - new Vector3(0.5f,-0.25f,0f),(transform.up * -1f),0.5f) || Physics.Raycast (transform.position - new Vector3(-0.5f,-0.25f,0f),(transform.up * -1f),0.5f)) {
-			if (Input.GetButton ("Jump")) {
+			if (Input.GetButtonDown ("Jump")) {
 				rigidbody.AddForce(transform.up * jumpSpeed);
 			}
 			speed = Input.GetAxis("Horizontal") * maxSpeed;
