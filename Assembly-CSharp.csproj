@@ -58,11 +58,13 @@
      <Compile Include="Assets\Scripts\HealthPickupScript.cs" />
      <Compile Include="Assets\Scripts\InfomationShowingScript.cs" />
      <Compile Include="Assets\Scripts\JumpPlatformScript.cs" />
+     <Compile Include="Assets\Scripts\OnChildrenFreedomScript.cs" />
      <Compile Include="Assets\Scripts\ParticleScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\RemoveAfterTimeScript.cs" />
      <Compile Include="Assets\Scripts\RemoveOutsideCamScript.cs" />
      <Compile Include="Assets\Scripts\SentryScript.cs" />
+     <Compile Include="Assets\Scripts\TimeManipulatorChargePickupScript.cs" />
      <Compile Include="Assets\Scripts\TriggerScript.cs" />
      <Compile Include="Assets\Scripts\healthScript.cs" />
   </ItemGroup>

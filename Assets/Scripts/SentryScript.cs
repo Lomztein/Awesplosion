@@ -12,6 +12,7 @@ public class SentryScript : MonoBehaviour {
 	public float range;
 	public float bulletSpeed;
 	public bool freeLineOfSite;
+	public bool mouseHovering;
 
 	// Use this for initialization
 	void Start () {
@@ -36,14 +37,23 @@ public class SentryScript : MonoBehaviour {
 					reloaded = false;
 					Invoke ("Reload",reloadTime);
 				}
-				RaycastHit hit;
-				if (Physics.Raycast(muzzle.transform.position,muzzle.transform.forward,out hit,range)) {
-					Debug.Log(hit.gameObject.name);
-				}
 			}
 		}
 	}
 	void Reload () {
 		reloaded = true;
+	}
+	void OnMouseEnter () {
+		mouseHovering = true;
+	}
+	void OnMouseExit () {
+		mouseHovering = false;
+	}
+
+	void OnGUI () {
+		if (mouseHovering == true) {
+			Vector2 posOnScreen = Camera.main.WorldToScreenPoint(new Vector2(transform.position.x,transform.position.y));
+			GUI.Label(new Rect(posOnScreen.x,posOnScreen.y,Screen.width,100),bulletType.name+", "+bulletType.tag);
+		}
 	}
 }

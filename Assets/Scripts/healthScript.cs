@@ -41,6 +41,7 @@ public class healthScript : MonoBehaviour {
 				}
 			}else{
 				transform.DetachChildren();
+				Destroy (gameObject);
 			}
 		}
 	}
