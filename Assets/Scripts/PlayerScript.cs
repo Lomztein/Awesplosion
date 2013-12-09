@@ -88,7 +88,7 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 		if (Input.GetButton ("Special1") && canManipulateTime == true) {
-			timeManipulatorCharge -= 25 / Time.timeScale * Time.deltaTime;
+			timeManipulatorCharge -= 10 / Time.timeScale * Time.deltaTime;
 			Time.timeScale = 0.25f;
 			if (timeManipulatorCharge <= 0) {
 				canManipulateTime = false;

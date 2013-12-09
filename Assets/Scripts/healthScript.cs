@@ -13,11 +13,12 @@ public class healthScript : MonoBehaviour {
 	public Vector2 healthPos;
 	public GameObject debris;
 	public Vector3 debrisVelocity;
+	public string name;
 	
 	// Update is called once per frame
 	void OnGUI () {
 		if (drawHealth) {
-			GUI.Box (new Rect(healthPos.x,healthPos.y,(Screen.width/2) * (health/maxHealth),20),"Health");
+			GUI.Box (new Rect(healthPos.x,healthPos.y,(Screen.width/2) * (health/maxHealth),20),name);
 		}
 	}
 

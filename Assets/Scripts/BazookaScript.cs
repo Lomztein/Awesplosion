@@ -14,12 +14,12 @@ public class BazookaScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-		if (angle > Mathf.Abs (90)) {
+/*		if (angle > Mathf.Abs (90)) {
 			transform.localScale = new Vector3(-1,1,1);
 		}else{
 			transform.localScale = new Vector3(1,1,1);
 		}
-		Debug.Log (angle);
+*///		Debug.Log (angle);
 	}
 
 	public void Fire () {
