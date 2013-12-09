@@ -63,19 +63,21 @@ public class PlayerScript : MonoBehaviour {
 			}
 			speed = Input.GetAxis("Horizontal") * maxSpeed;
 		}else{
-			speed = Input.GetAxis("Horizontal") * maxSpeed/3;
+			speed = 0;
 		}
 
 		Debug.DrawRay (transform.position - new Vector3(0f,-0.25f,0f),(transform.up * -1f),Color.green);
 		Debug.DrawRay (transform.position - new Vector3(0.5f,-0.25f,0f),(transform.up * -1f),Color.green);
 		Debug.DrawRay (transform.position - new Vector3(-0.5f,-0.25f,0f),(transform.up * -1f),Color.green);
 
-		Debug.Log (speed);
+//		Debug.Log (speed);
 
 		Mathf.Clamp(rigidbody.velocity.x,-maxSpeed,maxSpeed);
 
 		Vector3 movement = new Vector3(speed * Time.deltaTime,0,0);
-		rigidbody.velocity += movement * 5;
+		if (rigidbody.velocity.x < maxSpeed) {
+			rigidbody.velocity += movement * 5;
+		}
 
 		if (newEquip) {
 			SpawnWeapon();

@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\DoorScript.cs" />
      <Compile Include="Assets\Scripts\DrawTriggerScript.cs" />
      <Compile Include="Assets\Scripts\GenericBulletScript.cs" />
+     <Compile Include="Assets\Scripts\GenericEnemyScript.cs" />
      <Compile Include="Assets\Scripts\GranadeScript.cs" />
      <Compile Include="Assets\Scripts\HealthPickupScript.cs" />
      <Compile Include="Assets\Scripts\InfomationShowingScript.cs" />
