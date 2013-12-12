@@ -30,4 +30,9 @@ public class GranadeScript : MonoBehaviour {
 			}
 		}
 	}
+	void OnCollisionEnter (Collision other) {
+		if (other.gameObject.GetComponent<Rigidbody>()) {
+			Explode();
+		}
+	}
 }

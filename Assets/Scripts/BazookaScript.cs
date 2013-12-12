@@ -30,6 +30,7 @@ public class BazookaScript : MonoBehaviour {
 			Physics.IgnoreCollision(lastBullet.transform.collider,transform.parent.collider);
 			reloaded = false;
 			Invoke ("Reload",reloadTime);
+			transform.parent.rigidbody.AddForce(transform.forward * (bulletSpeed/5) * -1);
 		}
 	}
 	void Reload () {

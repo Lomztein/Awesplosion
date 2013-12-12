@@ -8,6 +8,7 @@ public class DropperScript : MonoBehaviour {
 	public GameObject clonePoint;
 	public bool repeating;
 	public float rate;
+	public GameObject[] possibleWeapons;
 
 	// Use this for initialization
 	void Start () {
@@ -25,5 +26,6 @@ public class DropperScript : MonoBehaviour {
 	}
 	void Clone () {
 		clone = (GameObject)Instantiate(prefab,clonePoint.transform.position,Quaternion.identity);
+		clone.GetComponent<GenericEnemyScript>().newEquip = possibleWeapons[Random.Range (0,possibleWeapons.Length)];
 	}
 }

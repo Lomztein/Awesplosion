@@ -46,12 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Prefabs\Main Menu\MenuButtonScript.cs" />
+     <Compile Include="Assets\Prefabs\Main Menu\OptionsScript.cs" />
      <Compile Include="Assets\Scripts\ActivateableObjectScript.cs" />
      <Compile Include="Assets\Scripts\BazookaMissleScript.cs" />
      <Compile Include="Assets\Scripts\BazookaScript.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
+     <Compile Include="Assets\Scripts\CheckpointScript.cs" />
      <Compile Include="Assets\Scripts\DebrisScript.cs" />
-     <Compile Include="Assets\Scripts\DoorScript.cs" />
      <Compile Include="Assets\Scripts\DrawTriggerScript.cs" />
      <Compile Include="Assets\Scripts\DropperScript.cs" />
      <Compile Include="Assets\Scripts\GenericBulletScript.cs" />
@@ -61,12 +63,15 @@
      <Compile Include="Assets\Scripts\InfomationShowingScript.cs" />
      <Compile Include="Assets\Scripts\JumpPlatformScript.cs" />
      <Compile Include="Assets\Scripts\LaserScript.cs" />
+     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
+     <Compile Include="Assets\Scripts\MiniSentryScript.cs" />
      <Compile Include="Assets\Scripts\OnChildrenFreedomScript.cs" />
      <Compile Include="Assets\Scripts\ParticleScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\RemoveAfterTimeScript.cs" />
      <Compile Include="Assets\Scripts\RemoveOutsideCamScript.cs" />
      <Compile Include="Assets\Scripts\SentryScript.cs" />
+     <Compile Include="Assets\Scripts\ShotgunScatterScript.cs" />
      <Compile Include="Assets\Scripts\TimeManipulatorChargePickupScript.cs" />
      <Compile Include="Assets\Scripts\TriggerScript.cs" />
      <Compile Include="Assets\Scripts\healthScript.cs" />

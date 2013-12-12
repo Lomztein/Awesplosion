@@ -18,7 +18,9 @@ public class PlayerScript : MonoBehaviour {
 	public float timeManipulatorCharge;
 	private bool canManipulateTime;
 	public float angle;
+	public GameObject checkPoint;
 	BazookaScript equipScript;
+	OptionsScript optionsScript;
 
 	//Player handling
 
@@ -27,6 +29,7 @@ public class PlayerScript : MonoBehaviour {
 		if (newEquip) {
 			SpawnWeapon();
 		}
+		optionsScript = GameObject.Find("OptionsManager").GetComponent<OptionsScript>();
 	}
 
 	void SpawnWeapon () {
@@ -53,6 +56,11 @@ public class PlayerScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		if (optionsScript.infiniteTimeCharge == true) {
+			timeManipulatorCharge = 100;
+		}
+		
 		mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		angle = Mathf.Atan2((mousePos.y - weaponPos.y)-transform.position.y, mousePos.x-transform.position.x)*180 / Mathf.PI;
 		//I did not come up with that myself, found it on the interwebs. Will find out how it works later.

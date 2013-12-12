@@ -16,8 +16,13 @@ public class SentryScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		target = GameObject.FindGameObjectWithTag("Player");
+		InvokeRepeating ("Search",2,1);
+	}
+	
+	void Search () {
 		if (target == null) {
-			target = GameObject.FindWithTag("Player");
+			target = GameObject.FindGameObjectWithTag("Player");
 		}
 	}
 	

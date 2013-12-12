@@ -11,7 +11,7 @@ public class DrawTriggerScript : MonoBehaviour {
 	void Start () {
 		lineRenderer = GetComponent<LineRenderer>();
 		originObject = GetComponent<Transform>();
-		destinationObject = transform.parent.GetComponent<DoorScript>().button.gameObject;
+		destinationObject = transform.parent.GetComponent<ActivateableObjectScript>().button.gameObject;
 		lineRenderer.SetWidth (0.5f,0.0f);
 	}
 	

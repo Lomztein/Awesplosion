@@ -7,6 +7,7 @@ public class TriggerScript : MonoBehaviour {
 	public bool activated;
 	public string triggerTag;
 	public bool activateOnPlayerCollision;
+	public bool deactivateOnExit = true;
 	
 	// Update is called once per frame
 	void Update () {
@@ -24,6 +25,11 @@ public class TriggerScript : MonoBehaviour {
 		}
 		if (other.tag == "Player" || activateOnPlayerCollision == true) {
 			activated = true;
+		}
+	}
+	void OnTriggerExit (Collider other) {
+		if (deactivateOnExit == true) {
+			activated = false;
 		}
 	}
 }
